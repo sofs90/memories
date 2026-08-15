@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>MEMORIA — Personal Archive Service</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CRT / scanline / noise overlay, purely decorative -->
+<div class="crt-overlay" aria-hidden="true"></div>
+
+<!-- ============ LOGIN SCREEN ============ -->
+<section id="screen-login" class="screen">
+  <div class="login-box">
+    <div class="ascii-mark" aria-hidden="true">▓▒░ M-84 ░▒▓</div>
+    <h1 class="brand">MEMORIA</h1>
+    <p class="subbrand">Personal Archive Service</p>
+    <p class="terminal-label">Recovery Terminal</p>
+
+    <div class="sys-meta">
+      <div>ACCOUNT: <span>S.F.O.</span></div>
+      <div>RECOVERY NODE: <span>M-84</span></div>
+      <div>STATUS: <span class="status-legacy">ARCHIVED</span></div>
+    </div>
+
+    <form id="login-form" autocomplete="off">
+      <label for="account-id">ACCOUNT ID</label>
+      <input type="text" id="account-id" name="account-id" spellcheck="false" autocomplete="off">
+
+      <label for="access-key">ACCESS KEY</label>
+      <input type="password" id="access-key" name="access-key" spellcheck="false" autocomplete="off">
+
+      <button type="submit" id="recover-btn">RECOVER ARCHIVE</button>
+    </form>
+
+    <div id="login-message" class="login-message" role="status" aria-live="polite"></div>
+
+    <p class="footnote">UNAUTHORIZED ACCESS IS LOGGED BY A SYSTEM THAT NO LONGER READS LOGS.</p>
+  </div>
+</section>
+
+<!-- ============ LOADING SCREEN ============ -->
+<section id="screen-loading" class="screen hidden">
+  <div class="loading-box">
+    <pre id="loading-lines" class="loading-lines"></pre>
+  </div>
+</section>
+
+<!-- ============ MAIN APP ============ -->
+<section id="screen-app" class="screen hidden">
+
+  <header class="app-header">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="app-title">
+      <span class="app-logo">MEMORIA</span>
+      <span class="app-tag">Personal Archive Service</span>
+    </div>
+    <div class="app-header-meta">
+      <div>ACCOUNT: <span id="hdr-account">—</span></div>
+      <div>RECOVERY NODE: <span id="hdr-node">—</span></div>
+      <div>STATUS: <span id="hdr-status" class="status-legacy">—</span></div>
+      <div>CREATED: <span id="hdr-created">—</span></div>
+      <div>LAST SYNC: <span id="hdr-sync">—</span></div>
+      <div id="hdr-clock" class="hdr-clock">00:00:00</div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <nav id="sidebar" class="sidebar">
+      <ul id="sidebar-list" class="sidebar-list"></ul>
+      <div class="sidebar-footer">
+        <div>ACCOUNT: S.F.O.</div>
+        <div>RECOVERY NODE: M-84</div>
+        <div>STATUS: ARCHIVED</div>
+      </div>
+    </nav>
+
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden"></div>
+
+    <main class="content">
+      <div class="content-toolbar">
+        <button id="back-btn" class="back-btn">‹ BACK</button>
+        <nav id="breadcrumbs" class="breadcrumbs" aria-label="breadcrumb"></nav>
+      </div>
+
+      <div id="file-grid" class="file-grid"></div>
+
+      <div id="system-ticker" class="system-ticker"></div>
+    </main>
+  </div>
+</section>
+
+<!-- ============ MODAL ============ -->
+<div id="modal-overlay" class="modal-overlay hidden">
+  <div class="modal-window" role="dialog" aria-modal="true">
+    <div class="modal-titlebar">
+      <span id="modal-title">FILE</span>
+      <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

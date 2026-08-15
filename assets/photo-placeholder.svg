@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <rect width="200" height="140" fill="#151511"/>
+  <rect x="0.5" y="0.5" width="199" height="139" fill="none" stroke="#3a3628" stroke-width="1"/>
+  <circle cx="100" cy="62" r="22" fill="none" stroke="#5c6b57" stroke-width="1.5"/>
+  <circle cx="100" cy="62" r="8" fill="none" stroke="#5c6b57" stroke-width="1.5"/>
+  <path d="M20 118 L70 78 L100 100 L140 66 L180 118 Z" fill="none" stroke="#4a4636" stroke-width="1.5"/>
+  <text x="100" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#6b6550">NO PREVIEW AVAILABLE</text>
+</svg>
